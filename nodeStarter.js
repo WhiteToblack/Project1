@@ -1,13 +1,8 @@
+var server = require('http');
+var app = require('./app');
 
-var httpSunucu = require('http');
 
-var httpSunucu = httpSunucu.createServer(function(talep, cevap){
-	cevap.writeHead(
-		200, 
-		{"Content-Type" : "text/html;charset=utf-8"}
-	);
-	cevap.end("<h1>Hoş geldiniz!</h1><br /><b>node.Js sunucusu üzerinde çalışıyorsun. Kolay gelsin ;)</b>");
-});
+var httpServer = server.createServer(app.handleRequest).listen(8000);
+console.log('8000 port listening!');
 
-httpSunucu.listen(1453);
-console.log("Sunucu 1453 portunda başlatıldı.");
+app.getNodeProperties();
