@@ -33,14 +33,14 @@ module.exports = {
                 break;
         }
     },
-    getNodeProperties:function(){
+    getNodeProperties: function () {
         async () => {
             try {
                 const pool = await sql.connect('mssql://sa:123@./NodeJs')
                 const result = await sql.query`select * from NodeProperties`
                 console.dir(result)
             } catch (err) {
-                // ... error checks
+                console.warn(err || err.message);
             }
         }
 
