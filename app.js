@@ -41,7 +41,7 @@ module.exports = {
                 console.dir(result)
             } catch (err) {
                 console.warn(err || err.message);
-            }
+            } 
         }
 
     }
